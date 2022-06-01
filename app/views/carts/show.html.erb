@@ -5,9 +5,9 @@
   </header>
 
   <% if enhanced_cart.length == 0 %>
-  <h1> Hi, your cart has nothing in it!</h1>
-  <h2> Please click below to return to the homepage to find great plants!</h2>
-  <%= link_to "Head on back to the Jungle", root_path %>
+  <div class="alert alert-primary"><h1> Hi, your cart has nothing in it!</h1>
+  <h2> Please click below to return to the homepage to find great plants!</h2></div>
+  <h4 class="alert alert-success"><%= link_to "Head on back to the Jungle", root_path %></h4>
   <% else %>
 
   <div class="panel panel-default items">
