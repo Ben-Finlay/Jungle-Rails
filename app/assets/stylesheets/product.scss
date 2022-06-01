@@ -54,12 +54,19 @@
     p {
       text-align: justify;
     }
-    .quantity,
-    .price {
+    .quantity {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: flex-end;
+      text-align: right;
+      font-weight: 700;
+    }
+    .price {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
       text-align: right;
       font-weight: 700;
     }
@@ -86,6 +93,7 @@
       color: white;
       font-weight: 700;
       text-align: center;
+      cursor: default;
     }
   }
 }
