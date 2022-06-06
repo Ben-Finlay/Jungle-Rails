@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def authenticate_with_credentials(email, password)
+  def self.authenticate_with_credentials(email, password)
     email.downcase!
     email.strip!
     @user = User.find_by_email(email)

@@ -61,24 +61,25 @@ RSpec.describe User, type: :model do
 
   end
 
-  describe ".authenticate_with_credentials" do
+
+  describe "Authentication" do
     before(:each) do
     @email = "test@test.com"
     @password = "test"
-    user = User.create(fname: "Tester", lname: "McTest", email: @email, password: @password, password_confirmation: @password)
+    @user = User.create(fname: "Tester", lname: "McTest", email: @email, password: @password, password_confirmation: @password)
     end
 
-    describe "edge case (:each)" do
+
       it "Should still authenticate if there are spaces before or after entered email" do
-        user = User.authenticate_with_credentials("   test@test.com    ", @password)
-      expect(user).to be_a(User)
+        @user = User.authenticate_with_credentials("   test@test.com    ", @password)
+      expect(@user).to be_a(User)
       end
+
+      it "Should still authenticate if the email is entered with the wrong case" do
+        @user = User.authenticate_with_credentials("teST@test.COM", @password)
+      expect(@user).to be_a(User)
+      end
+
     end
-
-
-  end
-
-
-
 end
 
